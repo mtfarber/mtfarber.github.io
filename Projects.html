@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matthew Farber | Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .project-card {
+      background: linear-gradient(to bottom right, #ffffff, #f1f5f9);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .project-desc {
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+    .project-card button {
+      background: #f9fafb;
+      color: #111827;
+      font-weight: 600;
+      border: 1px solid #d1d5db;
+      border-radius: 0.75rem;
+      padding: 0.4rem 1.25rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .project-card button:hover {
+      background: #e5e7eb;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #1e40af;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #334155;
+      margin-top: 0;
+    }
+  </style>
+  <script>
+  function toggleDetails(id) {
+    const details = document.getElementById(id);
+    if (details.style.maxHeight && details.style.maxHeight !== '0px') {
+      details.style.maxHeight = '0px';
+    } else {
+      details.style.maxHeight = details.scrollHeight + 'px';
+    }
+  }
+</script>
+</head>
+<body>
+  <header>
+    <h1>Matthew Farber</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="project-card">
+      <div class="project-title">GitHub Traceability AI</div>
+      <div class="project-desc">Smart GitHub action tool for analyzing code dependency and file traceability.</div>
+      <button onclick="toggleDetails('project1')">More Info</button>
+      <div class="project-details" id="project1">
+        Built using cloud-based AI models to reduce debugging and rework by over 95%. Designed to improve team collaboration and repository maintainability.
+      </div>
+      <a href="https://github.com/mtfarber/github-traceability-ai" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Campus Network Protocol</div>
+      <div class="project-desc">Custom network layer for improved registration speed during peak load.</div>
+      <button onclick="toggleDetails('project2')">More Info</button>
+      <div class="project-details" id="project2">
+        Created a network reliability selection layer to help users reduce latency under variable WiFi loads during campus registration events.
+      </div>
+      <a href="https://github.com/mtfarber/network-protocol" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Storage Scholars Platform</div>
+      <div class="project-desc">Chapter-based logistics app for student move-in/move-out coordination.</div>
+      <button onclick="toggleDetails('project3')">More Info</button>
+      <div class="project-details" id="project3">
+        Developed operational tools and marketing integrations to support a student-led logistics company serving 100+ clients during semester transitions.
+      </div>
+      <a href="https://github.com/mtfarber/storage-scholars" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+  </div>
+</body>
+</html>

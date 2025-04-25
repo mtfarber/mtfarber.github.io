@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Farber | Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .about {
+      flex: 1;
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .about img {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 4px solid #000000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: scale(1.2);
+      object-position: 60% 50%;
+      
+      
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      font-size: 1.125rem;
+      color: #374151;
+    }
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      background: #f3f4f6;
+    }
+    footer a {
+      margin: 0 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    footer svg {
+      width: 32px;
+      height: 32px;
+      transition: fill 0.3s ease;
+    }
+    footer a:hover svg {
+      fill: #1d4ed8;
+    }
+      .about img:hover {
+      transform: scale(1.3);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+      .social-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .social-links a svg {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease;
+    }
+    .social-links a:hover svg {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Matthew Farber</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <img src="Profile_photo.jpg" alt="Your profile picture">
+    <h2>About Me</h2>
+    <p>
+      I'm a software developer with a passion for building clean, efficient, and user-friendly applications.
+      This is a placeholder where you can talk about your background, interests, and what kind of work you love to do.
+      Mention any tech stacks you enjoy, projects you’ve worked on, or fun facts that show your personality.
+    </p>
+      
+  </section>
+
+  <footer>
+    <a href="https://github.com/mtfarber" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+        <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.1.79-.25.79-.56v-2.06c-3.2.69-3.87-1.54-3.87-1.54-.53-1.35-1.29-1.71-1.29-1.71-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.5.11-3.13 0 0 .97-.31 3.2 1.18a11.18 11.18 0 0 1 5.82 0c2.23-1.49 3.2-1.18 3.2-1.18.63 1.63.23 2.83.12 3.13.75.81 1.2 1.84 1.2 3.1 0 4.42-2.69 5.4-5.25 5.68.41.35.77 1.05.77 2.12v3.14c0 .31.21.67.8.56A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/matthewtfarber/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#0A66C2">
+        <path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5Zm-11 19H5v-9h3v9ZM6.5 8.2a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6ZM20 19h-3v-4.5c0-2.5-3-2.3-3 0V19h-3v-9h3v1.4c1.4-2.6 6-2.8 6 2.5V19Z"/>
+      </svg>
+    </a>
+    <a href="mailto:matthewfarber441@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#D14836">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.5l7.5 5.5 7.5-5.5V18H4z"/>
+      </svg>
+    </a>
+  </footer>
+
+  
+</body>
+</html>

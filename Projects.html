@@ -112,15 +112,18 @@
       cursor: pointer;
     }
     .mobile-nav {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      display: flex;
       flex-direction: column;
       background: #ffffff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       position: absolute;
       top: 70px;
       right: 2rem;
-      padding: 1rem;
+      padding: 0 1rem;
       border-radius: 0.75rem;
+      transition: max-height 0.4s ease;
     }
     .mobile-nav a {
       margin-bottom: 1rem;
@@ -210,7 +213,11 @@
 <script>
   function toggleMenu() {
     const menu = document.getElementById('mobile-nav');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    if (menu.style.maxHeight && menu.style.maxHeight !== '0px') {
+      menu.style.maxHeight = '0px';
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+    }
   }
 </script>
 </body>

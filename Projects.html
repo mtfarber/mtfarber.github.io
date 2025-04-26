@@ -106,6 +106,36 @@
       color: #334155;
       margin-top: 0;
     }
+      .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: absolute;
+      top: 70px;
+      right: 2rem;
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+    .mobile-nav a {
+      margin-bottom: 1rem;
+      color: #111827;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
   <script>
   function toggleDetails(id) {
@@ -122,6 +152,12 @@
   <header>
     <h1>Matthew Farber</h1>
     <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Projects.html">Projects</a>
+      <a href="Resume.html">Resume</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="mobile-nav" id="mobile-nav">
       <a href="index.html">Home</a>
       <a href="Projects.html">Projects</a>
       <a href="Resume.html">Resume</a>
@@ -164,12 +200,18 @@
       <button onclick="toggleDetails('project3')">More Info</button>
       <div class="project-details" id="project3">
         <p><strong>Overview:</strong> Developed several creative computer animation projects using Autodesk Maya and Python scripting, blending custom modeling, texturing, and simulation techniques.</p>
-        <p><strong>Focus Areas:</strong> Built procedural generation systems to create large, dynamic environments, implemented physics-based animations for natural object interactions, and designed unique textures.</p>
+        <p><strong>Focus Areas:</strong> Built procedural generation systems to create large, dynamic environments; implemented physics-based animations for natural object interactions; and designed unique textures.</p>
         <p><strong>Purpose:</strong> These projects were designed both for academic work and to explore creative applications of procedural generation and physics simulation in animation workflows.</p>
         <p><strong>Tools Used:</strong> Autodesk Maya, Python, MEL Scripting, Procedural Modeling Techniques</p>
       </div>
       <a href="https://github.com/mtfarber/SchoolCode/tree/main/maya/Final%20Projects" target="_blank" class="project-link">View on GitHub</a>
     </div>
   </div>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-nav');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
 </body>
 </html>

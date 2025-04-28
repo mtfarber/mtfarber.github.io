@@ -114,6 +114,42 @@
     .social-links a:hover svg {
       transform: scale(1.1);
     }
+      .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .mobile-nav {
+      max-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      width: 100%;
+      margin-top: 0;
+      transition: max-height 0.4s ease;
+      align-items: center;
+      padding: 0;
+    }
+    .mobile-nav a {
+      margin-bottom: 1rem;
+      color: #111827;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -124,7 +160,14 @@
       <a href="Projects.html">Projects</a>
       <a href="Resume.html">Resume</a>
     </nav>
-  </header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Resume.html">Resume</a>
+</nav>
 
   <section class="about">
     <img src="Profile_photo.jpg" alt="Your profile picture">
@@ -133,7 +176,7 @@
         I'm a Technical Consultant with a background in computer science and business analytics with a strong passion for building systems that are clean, scalable, and client-focused.<br><br>
         I enjoy working directly with clients, translating their ideas and requirements into innovative technical solutions that deliver real impact. I value open communication, creativity, and the opportunity to see the direct outcomes of my work.<br><br>
         I am particularly interested in optimization, automation, and cloud technologies, where I can create efficient and scalable solutions that help teams move faster and smarter. Every problem presents a unique challenge, and I am motivated by the opportunity to think critically and find the best approach.<br><br>
-        I am looking to grow into a role where I cannot only build and optimize systems but also work closely with executives and decision-makers to shape impactful projects and strategies.
+        I am looking to grow into a role where I can not only build and optimize systems but also work closely with executives and decision-makers to shape impactful projects and strategies.
       </p>
       
   </section>
@@ -157,5 +200,28 @@
   </footer>
 
   
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-nav');
+    const links = menu.querySelectorAll('a');
+    if (menu.style.maxHeight && menu.style.maxHeight !== '0px') {
+      menu.style.maxHeight = '0px';
+      document.querySelector('.hamburger').style.transform = 'rotate(0deg)';
+      links.forEach(link => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(-10px)';
+      });
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      document.querySelector('.hamburger').style.transform = 'rotate(90deg)';
+      links.forEach((link, index) => {
+        setTimeout(() => {
+          link.style.opacity = '1';
+          link.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+  }
+</script>
 </body>
 </html>

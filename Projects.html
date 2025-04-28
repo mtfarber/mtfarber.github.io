@@ -118,13 +118,12 @@
       display: flex;
       flex-direction: column;
       background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: absolute;
-      top: 70px;
-      right: 2rem;
-      padding: 0 1rem;
-      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      width: 100%;
+      margin-top: 0;
       transition: max-height 0.4s ease;
+      align-items: center;
+      padding: 0;
     }
     .mobile-nav a {
       margin-bottom: 1rem;
@@ -172,14 +171,15 @@ function toggleMenu() {
       <a href="Resume.html">Resume</a>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="mobile-nav" id="mobile-nav">
-      <a href="index.html">Home</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Resume.html">Resume</a>
-    </nav>
-  </header>
+</header>
 
-  <div class="container">
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Resume.html">Resume</a>
+</nav>
+
+<div class="container">
     <div class="project-card">
       <div class="project-title">GitHub Traceability Action</div>
       <div class="project-desc">Smart GitHub action tool for analyzing code dependency and file traceability.</div>
@@ -222,15 +222,28 @@ function toggleMenu() {
       <a href="https://github.com/mtfarber/SchoolCode/tree/main/maya/Final%20Projects" target="_blank" class="project-link">View on GitHub</a>
     </div>
   </div>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-nav');
-    if (menu.style.maxHeight && menu.style.maxHeight !== '0px') {
-      menu.style.maxHeight = '0px';
-    } else {
-      menu.style.maxHeight = menu.scrollHeight + 'px';
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-nav');
+      const links = menu.querySelectorAll('a');
+      if (menu.style.maxHeight && menu.style.maxHeight !== '0px') {
+        menu.style.maxHeight = '0px';
+        document.querySelector('.hamburger').style.transform = 'rotate(0deg)';
+        links.forEach(link => {
+          link.style.opacity = '0';
+          link.style.transform = 'translateY(-10px)';
+        });
+      } else {
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        document.querySelector('.hamburger').style.transform = 'rotate(90deg)';
+        links.forEach((link, index) => {
+          setTimeout(() => {
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }
     }
-  }
-</script>
+  </script>
 </body>
 </html>
